@@ -1,0 +1,123 @@
+\hypertarget{goals_8cpp}{}\doxysection{src/goals.cpp File Reference}
+\label{goals_8cpp}\index{src/goals.cpp@{src/goals.cpp}}
+
+
+software architecture for the control of the robot in the environment  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$move\+\_\+base\+\_\+msgs/\+Move\+Base\+Action.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/simple\+\_\+action\+\_\+client.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Twist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sensor\+\_\+msgs/\+Laser\+Scan.\+h\char`\"{}}\newline
+Include dependency graph for goals.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{goals_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{goals_8cpp_a21e20cc0b6656ae897b3cbb969b93241}\label{goals_8cpp_a21e20cc0b6656ae897b3cbb969b93241}} 
+typedef actionlib\+::\+Simple\+Action\+Client$<$ move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Action $>$ \mbox{\hyperlink{goals_8cpp_a21e20cc0b6656ae897b3cbb969b93241}{Move\+Base\+Client}}
+\begin{DoxyCompactList}\small\item\em global actionclient. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{goals_8cpp_af5aabcc533f3c2e55959a3d09320e99a}{dist\+Callback}} (const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&\mbox{\hyperlink{goals_8cpp_a44838ac64b5c8a5026bf42afbebbda22}{scan}})
+\begin{DoxyCompactList}\small\item\em callback for controlling the distance between the robot and the obstacles around it in order to avoid collision with them. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{goals_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em main function which controls the robot\textquotesingle{}s behaviour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{goals_8cpp_a64acaadb68ab8e4dfbb9db0f7edb30b2}\label{goals_8cpp_a64acaadb68ab8e4dfbb9db0f7edb30b2}} 
+geometry\+\_\+msgs\+::\+Twist \mbox{\hyperlink{goals_8cpp_a64acaadb68ab8e4dfbb9db0f7edb30b2}{base\+\_\+cmd}}
+\begin{DoxyCompactList}\small\item\em velocity of the robot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{goals_8cpp_a44838ac64b5c8a5026bf42afbebbda22}\label{goals_8cpp_a44838ac64b5c8a5026bf42afbebbda22}} 
+sensor\+\_\+msgs\+::\+Laser\+Scan \mbox{\hyperlink{goals_8cpp_a44838ac64b5c8a5026bf42afbebbda22}{scan}}
+\begin{DoxyCompactList}\small\item\em laser scan information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{goals_8cpp_a89890f177e42499c60d6a39116be9b66}\label{goals_8cpp_a89890f177e42499c60d6a39116be9b66}} 
+ros\+::\+Publisher \mbox{\hyperlink{goals_8cpp_a89890f177e42499c60d6a39116be9b66}{scan\+\_\+pub}}
+\begin{DoxyCompactList}\small\item\em global publisher to the /scan topic. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{goals_8cpp_a350594df3e8f6948c8462edfd41ce086}\label{goals_8cpp_a350594df3e8f6948c8462edfd41ce086}} 
+ros\+::\+Publisher \mbox{\hyperlink{goals_8cpp_a350594df3e8f6948c8462edfd41ce086}{pub}}
+\begin{DoxyCompactList}\small\item\em global publisher to the /cmd\+\_\+vel topic. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{goals_8cpp_ad0da36b2558901e21e7a30f6c227a45e}\label{goals_8cpp_ad0da36b2558901e21e7a30f6c227a45e}} 
+float \mbox{\hyperlink{goals_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}}
+\begin{DoxyCompactList}\small\item\em goal\textquotesingle{}s coordinates inserted by the user. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{goals_8cpp_aa4f0d3eebc3c443f9be81bf48561a217}\label{goals_8cpp_aa4f0d3eebc3c443f9be81bf48561a217}} 
+float \mbox{\hyperlink{goals_8cpp_aa4f0d3eebc3c443f9be81bf48561a217}{y}}
+\begin{DoxyCompactList}\small\item\em goal\textquotesingle{}s coordinates inserted by the user. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{goals_8cpp_a5d055a05b7de1e0898d6da92e2725e5e}\label{goals_8cpp_a5d055a05b7de1e0898d6da92e2725e5e}} 
+char \mbox{\hyperlink{goals_8cpp_a5d055a05b7de1e0898d6da92e2725e5e}{cmd}}
+\begin{DoxyCompactList}\small\item\em command inserted by keyboard for moving the robot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{goals_8cpp_a38deedb02dcebac366f97a0879b3be5b}\label{goals_8cpp_a38deedb02dcebac366f97a0879b3be5b}} 
+char \mbox{\hyperlink{goals_8cpp_a38deedb02dcebac366f97a0879b3be5b}{input}}
+\begin{DoxyCompactList}\small\item\em guide mode choosen by the user. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{goals_8cpp_aa6bbfe37bfa912a1db55f6c1733cc64e}\label{goals_8cpp_aa6bbfe37bfa912a1db55f6c1733cc64e}} 
+float \mbox{\hyperlink{goals_8cpp_aa6bbfe37bfa912a1db55f6c1733cc64e}{value\+\_\+front}}
+\begin{DoxyCompactList}\small\item\em distances from the obstacle on the robot\textquotesingle{}s front. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{goals_8cpp_aaa779bed26d81f68c2ad205a5855b4ce}\label{goals_8cpp_aaa779bed26d81f68c2ad205a5855b4ce}} 
+float \mbox{\hyperlink{goals_8cpp_aaa779bed26d81f68c2ad205a5855b4ce}{value\+\_\+right}}
+\begin{DoxyCompactList}\small\item\em distances from the obstacle on the robot\textquotesingle{}s right. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{goals_8cpp_a3dfe4cc7117dfedaa96eace4cbd901a6}\label{goals_8cpp_a3dfe4cc7117dfedaa96eace4cbd901a6}} 
+float \mbox{\hyperlink{goals_8cpp_a3dfe4cc7117dfedaa96eace4cbd901a6}{value\+\_\+left}}
+\begin{DoxyCompactList}\small\item\em distances from the obstacle on the robot\textquotesingle{}s left. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+software architecture for the control of the robot in the environment 
+
+\begin{DoxyAuthor}{Author}
+Martina Germani 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+27/07/2022
+\end{DoxyDate}
+The type of robot\textquotesingle{}s control depends on user\textquotesingle{}s input. In particular, if the user enters the letter \char`\"{}a\char`\"{}, the robot has to autonomously reach a (x,y) coordinate inserted by the user; if the user enters the letter \char`\"{}m\char`\"{}, the user itself can manually drive the robot using the keyboard; if, instead, the user enters the letter \char`\"{}c\char`\"{}, the user can manually drive the robot using the keyboard, but there are some controls in order to avoid collision with the edges of the environment.
+
+Subscribes to\+:~\newline
+ /scan which is a topic that in the field \char`\"{}ranges\char`\"{} contains information about the distance between the robot and the obstacles
+
+Publishes to\+:~\newline
+ /scan /cmd\+\_\+vel
+
+Client\+:~\newline
+ /client/simple\+\_\+action\+\_\+client
+
+Description \+:
+
+This node simulates a robot\textquotesingle{}s control depending on the input inserted by the user. If the user chooses the \char`\"{}automatic guide\char`\"{} (letter \char`\"{}a\char`\"{}), the move\+\_\+base package requires goal to be sent to the move\+\_\+base/goal topic; in this way, the move\+\_\+base action accepts goal from client and attempts to move the robot to the specified position. If the user chooses the \char`\"{}manual guide\char`\"{} (letter \char`\"{}m\char`\"{}), the user can press some keyboard keys so as to move the robot in the desired direction; in particular, it can press \char`\"{}+\char`\"{} in order to move the robot on a straight line, \char`\"{}r\char`\"{} in order to turn right the robot, \char`\"{}l\char`\"{} in order to turn left the robot, \char`\"{}s\char`\"{} in order to stop the robot or \char`\"{}.\char`\"{} in order to change the guide mode. If the user chooses the \char`\"{}controlled guide\char`\"{} (letter \char`\"{}c\char`\"{}), the user can move the robot as in the \char`\"{}manual guide\char`\"{}, but there are some controls releted to the distance from the obstacles; for doing that there are a publisher and a subscriber to the topic /scan of the robot, in fact its field \char`\"{}ranges\char`\"{} contains information about the distance between the robot and the obstacles around it. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{goals_8cpp_af5aabcc533f3c2e55959a3d09320e99a}\label{goals_8cpp_af5aabcc533f3c2e55959a3d09320e99a}} 
+\index{goals.cpp@{goals.cpp}!distCallback@{distCallback}}
+\index{distCallback@{distCallback}!goals.cpp@{goals.cpp}}
+\doxysubsubsection{\texorpdfstring{distCallback()}{distCallback()}}
+{\footnotesize\ttfamily void dist\+Callback (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&}]{scan }\end{DoxyParamCaption})}
+
+
+
+callback for controlling the distance between the robot and the obstacles around it in order to avoid collision with them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scan} & robot\textquotesingle{}s laser\\
+\hline
+\end{DoxyParams}
+This function, while the user moves the robot using the keyboard, controls the distance between the robot and the obstacles around it\+: this information is contained in the field \char`\"{}ranges\char`\"{} of the topic /scan. More in detail, if the user enters \char`\"{}+\char`\"{}, this function controls the distance between the robot and the obstacle in front of it\+: if it is close, the robot stops, otherwise it moves on a straight line. If, instead, the user enters \char`\"{}l\char`\"{}, this function controls the distance between the robot and the obstacle on the left\+: if it is close, the robot turns right instead of left, otherwise it turns left. If the user enters \char`\"{}r\char`\"{}, this function controls the distance between the robot and the obstacle on the right\+: if it is close, the robot turns left instead of right, otherwise it turns right. \mbox{\Hypertarget{goals_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{goals_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{goals.cpp@{goals.cpp}!main@{main}}
+\index{main@{main}!goals.cpp@{goals.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+main function which controls the robot\textquotesingle{}s behaviour. 
+
+This function creates a node, called \char`\"{}goal\+\_\+node\char`\"{}, two publishers (one to the topic /cmd\+\_\+vel and one to the /scan topic) and a subscriber to the /scan topic. Once the user chose how to move the robot, this function implements some controls. More in details, if the user enters \char`\"{}a\char`\"{}, it constructs an action client used to communicate with the move\+\_\+base action, then waits for the action server to come up and creates a goal to send to the move\+\_\+base; at this point, the user enters the desired position, and this function controls if the inserted target is reachable or not\+: if it is not reachable, it will be deleted, otherwise it waits for the goal to finish. If the user enters \char`\"{}m\char`\"{}, the user can move the robot using the keyboard, so this function contains the code which builds some commands for doing that. In particular, if the user enters \char`\"{}+\char`\"{}, it moves the robot on a straight line modifying its linear velocity and publishing it on the /cmd\+\_\+vel topic; if the user enters \char`\"{}r\char`\"{}, it turns right the robot modifying its angular velocity and publishing it on /cmd\+\_\+vel topic; if the user enters \char`\"{}l\char`\"{}, it turns left the robot, modifying its angular velocity and publishing it on /cmd\+\_\+vel $\ast$ topic; if the user enters \char`\"{}s\char`\"{}, it stops the robot by putting to zero both its linear and angular velocity and publishing them on the /cmd\+\_\+vel topic; if, instead, the user enters \char`\"{}.\char`\"{}, it changes the guide mode. If the user enters \char`\"{}c\char`\"{}, the dist\+Callback function is executed. 
